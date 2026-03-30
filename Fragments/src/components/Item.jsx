@@ -1,12 +1,11 @@
 import styles from "./Item.module.css";
 
-const Item = ({ foodItem }) => {
-  const handleBuyButtonClick = () => {
-    console.log(`${foodItem} being bought`);
-  };
+const Item = ({ foodItem, bought, handleBuyButtonClick }) => {
   // let { foodItem } = props;
   return (
-    <li className={`list-group-item ${styles["p-item"]}`}>
+    <li
+      className={`list-group-item ${bought && "active"}  ${styles["p-item"]}`}
+    >
       <span className={styles["p-span"]}>{foodItem}</span>
       <button
         className={`${styles.button} btn btn-info`}
